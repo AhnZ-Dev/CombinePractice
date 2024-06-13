@@ -38,17 +38,58 @@ enum WeatherError: Error {
     case thingsJustHappen
 }
 
+extension Notification.Name {
+    static let newMessage = Notification.Name("newMessage")
+}
+
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var allowMessagesSwitch: UISwitch! 
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
+    
+    // PropertyWrapper ??
+    @Published var canSendMessages: Bool = false
+    
+    private var switchSubscriber: AnyCancellable? // 메모리관리 // 뷰가 종료될 때 구독을 확인하고 삭제
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        playgroundCombine() // playground형 연습 
+//        playgroundCombine() // playground형 연습
+        setupProcessingChain()
+        setupTargetActions()
+    }
+    // 버튼 동작 연결 및 버튼상태 별 UI 변경
+    func setupTargetActions(){
+        allowMessagesSwitch.addTarget(self, action: #selector(didSwitch), for: .valueChanged)
+        sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
+        
+        sendButton.setTitleColor(.systemPink, for: .disabled) // 비활성화시 동작시 버튼 텍스트 색 변경
+    }
+    // Bind
+    func setupProcessingChain(){
+        print("setupProcessingChain")
+        switchSubscriber = $canSendMessages.receive(on: DispatchQueue.main)// mainThread
+            .print("enter value")
+            .assign(to: \.isEnabled, on: sendButton) // Button의 isEnabled 속성에 넣어줌
+        
+        let messagePublisher = NotificationCenter.Publisher(center: .default, name: .newMessage)
+        
+        let messageSubscriber = Subscribers.Assign(object: messageLabel, keyPath: \.text)
+        //messagePublisher.subscribe(messageSubscriber) 
         
     }
     
+    @objc func didSwitch(_ sender: UISwitch){
+        print("didSwitch")
+        canSendMessages = sender.isOn
+    }
     
-        
+    @objc func sendMessage(_ sender: UIButton){
+        print("sendMessage")
+        canSendMessages = sender.isEnabled
+    }
 }
 
 // playground형 Combine 연습
