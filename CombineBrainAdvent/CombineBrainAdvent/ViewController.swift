@@ -42,6 +42,11 @@ extension Notification.Name {
     static let newMessage = Notification.Name("newMessage")
 }
 
+struct Message {
+    let content: String
+    let author: String
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var allowMessagesSwitch: UISwitch! 
@@ -59,13 +64,20 @@ class ViewController: UIViewController {
 //        playgroundCombine() // playground형 연습
         setupProcessingChain()
         setupTargetActions()
+        setupUI()
     }
+    // UI설정
+    func setupUI(){
+        sendButton.setTitleColor(.systemPink, for: .disabled) // 비활성화시 동작시 버튼 텍스트 색 변경
+        messageLabel.sizeToFit()
+        
+    }
+    
     // 버튼 동작 연결 및 버튼상태 별 UI 변경
     func setupTargetActions(){
         allowMessagesSwitch.addTarget(self, action: #selector(didSwitch), for: .valueChanged)
         sendButton.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         
-        sendButton.setTitleColor(.systemPink, for: .disabled) // 비활성화시 동작시 버튼 텍스트 색 변경
     }
     // Bind
     func setupProcessingChain(){
@@ -74,10 +86,13 @@ class ViewController: UIViewController {
             .print("enter value")
             .assign(to: \.isEnabled, on: sendButton) // Button의 isEnabled 속성에 넣어줌
         
-        let messagePublisher = NotificationCenter.Publisher(center: .default, name: .newMessage)
+        let messagePublisher = NotificationCenter.Publisher(center: .default, name: .newMessage) // 해당 Notification이 호출 될 때
+            .map{notification -> String? in // String?형 변환(object가 옵셔널형)
+                return (notification.object as? Message)?.content ?? "" // 형 변환 후 필요한 Content 요소만 가져옴
+            }
         
         let messageSubscriber = Subscribers.Assign(object: messageLabel, keyPath: \.text)
-        //messagePublisher.subscribe(messageSubscriber) 
+        messagePublisher.subscribe(messageSubscriber) 
         
     }
     
@@ -88,7 +103,9 @@ class ViewController: UIViewController {
     
     @objc func sendMessage(_ sender: UIButton){
         print("sendMessage")
-        canSendMessages = sender.isEnabled
+//        canSendMessages = sender.isEnabled
+        let message = Message(content: "The current Time is \(Date())", author: "Me") // 구조체 생성
+        NotificationCenter.default.post(name: .newMessage, object: message) // Notification에 구조체를 보냄
     }
 }
 
