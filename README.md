@@ -1,10 +1,11 @@
 # CombinePractice
-</br>
 
-## BrianAdvent / Youtube
-https://www.youtube.com/watch?v=RysM_XPNMTw
+### Notion에 정리하였습니다. 
 
-- Publisher, Subscriber, Operator 란 
-- Combine Componet 동작 원리 및 순서 
-- assign의 활용 
-- Notification.Publisher 
+프로젝트별 
+1. 강의내용 및 궁금한 점(물음) 
+2. -> Question에 물음에 대한 답을 정리하였습니다. 
+
+https://www.notion.so/CombinePractice-aa004c64a0c742bba2d0515ec3cae776?pvs=4
+
+
