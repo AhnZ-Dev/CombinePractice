@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YSD-kH-fY0">
-                                <rect key="frame" x="24" y="387.33333333333331" width="345" height="77.666666666666686"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YSD-kH-fY0">
+                                <rect key="frame" x="24" y="377.33333333333331" width="345" height="97.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z32-5d-U80">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="32.666666666666664"/>
@@ -27,11 +27,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k51-gT-864">
-                                        <rect key="frame" x="0.0" y="32.666666666666686" width="345" height="45"/>
+                                        <rect key="frame" x="0.0" y="52.666666666666686" width="345" height="45"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="24"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Refresh"/>
+                                        <connections>
+                                            <action selector="tapRefreshButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hCb-4O-6Bs"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -44,6 +47,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YSD-kH-fY0" secondAttribute="trailing" constant="24" id="TJ0-Fn-6XB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="codeLabel" destination="Z32-5d-U80" id="NGr-vc-5ol"/>
+                        <outlet property="refreshButton" destination="k51-gT-864" id="VAm-TT-JMQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9A1728C2C207AAB00172D99 /* QuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1728B2C207AAB00172D99 /* QuoteService.swift */; };
+		E9A1728E2C207CDC00172D99 /* QuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A1728D2C207CDC00172D99 /* QuoteViewModel.swift */; };
 		E9E8206A2C1E656E00FC5B18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E820692C1E656E00FC5B18 /* AppDelegate.swift */; };
 		E9E8206C2C1E656E00FC5B18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E8206B2C1E656E00FC5B18 /* SceneDelegate.swift */; };
 		E9E8206E2C1E656E00FC5B18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E8206D2C1E656E00FC5B18 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9A1728B2C207AAB00172D99 /* QuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteService.swift; sourceTree = "<group>"; };
+		E9A1728D2C207CDC00172D99 /* QuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewModel.swift; sourceTree = "<group>"; };
 		E9E820662C1E656E00FC5B18 /* CombineKelvinFok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineKelvinFok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E820692C1E656E00FC5B18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9E8206B2C1E656E00FC5B18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,10 +63,12 @@
 				E9E820692C1E656E00FC5B18 /* AppDelegate.swift */,
 				E9E8206B2C1E656E00FC5B18 /* SceneDelegate.swift */,
 				E9E8206D2C1E656E00FC5B18 /* ViewController.swift */,
+				E9A1728D2C207CDC00172D99 /* QuoteViewModel.swift */,
 				E9E8206F2C1E656E00FC5B18 /* Main.storyboard */,
 				E9E820722C1E656F00FC5B18 /* Assets.xcassets */,
 				E9E820742C1E656F00FC5B18 /* LaunchScreen.storyboard */,
 				E9E820772C1E656F00FC5B18 /* Info.plist */,
+				E9A1728B2C207AAB00172D99 /* QuoteService.swift */,
 			);
 			path = CombineKelvinFok;
 			sourceTree = "<group>";
@@ -138,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A1728C2C207AAB00172D99 /* QuoteService.swift in Sources */,
+				E9A1728E2C207CDC00172D99 /* QuoteViewModel.swift in Sources */,
 				E9E8206E2C1E656E00FC5B18 /* ViewController.swift in Sources */,
 				E9E8206A2C1E656E00FC5B18 /* AppDelegate.swift in Sources */,
 				E9E8206C2C1E656E00FC5B18 /* SceneDelegate.swift in Sources */,

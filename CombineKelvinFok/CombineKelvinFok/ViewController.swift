@@ -9,18 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var codeLabel: UILabel!
+    @IBOutlet weak var refreshButton: UIButton!
+    
+    private let vm = QuoteViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-    
-    func snapkit(){
-        
-        debugPrint(#fileID,#function,"ahnz - <#comment#>")
-        
-        
+    @IBAction func tapRefreshButton(_ sender: UIButton) {
     }
-
+    
 }
 
