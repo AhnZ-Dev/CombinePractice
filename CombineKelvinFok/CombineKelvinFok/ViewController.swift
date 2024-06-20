@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     }
     
     private func bind(){
-        let output = vm.transforem(input: input.eraseToAnyPublisher())
+        let output = vm.transforem(input: input.eraseToAnyPublisher()) // 인풋을 아웃에 넣어줌 (enum형식으로 각 타입별로 들어왔을 때 output처리)
         
         output
             .receive(on: DispatchQueue.main)
