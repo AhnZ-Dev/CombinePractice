@@ -7,6 +7,7 @@
 import Combine
 import Foundation
 
+// QuoteServiceType을 프로토콜을
 protocol QuoteServiceType {
     func getRandomQuote() -> AnyPublisher<Quote,Error>
 }
@@ -17,7 +18,7 @@ class QuoteService: QuoteServiceType {
         return URLSession.shared.dataTaskPublisher(for: url)
             .catch { error in
                 return Fail(error: error).eraseToAnyPublisher()
-            }.map{$0.data}
+            }.map{$0.data} // 필요한 data만 뽑는다.
             .decode(type: Quote.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
