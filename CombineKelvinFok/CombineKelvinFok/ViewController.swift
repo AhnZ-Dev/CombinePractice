@@ -42,7 +42,6 @@ class ViewController: UIViewController {
                 self?.refreshButton.isEnabled = isEnable
             }
         }.store(in: &cancellable)
-
     }
 
     @IBAction func tapRefreshButton(_ sender: UIButton) {

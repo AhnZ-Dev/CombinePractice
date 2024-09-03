@@ -8,6 +8,8 @@
 import Combine
 import Foundation
 
+
+
 class QuoteViewModel {
     
     enum Input {

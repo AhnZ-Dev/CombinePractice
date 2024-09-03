@@ -1,13 +1,13 @@
 //
-//  SwiftUI_PracticeUITestsLaunchTests.swift
-//  SwiftUI_PracticeUITests
+//  CompositionalPracticeUITestsLaunchTests.swift
+//  CompositionalPracticeUITests
 //
-//  Created by Jihoon on 9/2/24.
+//  Created by Jihoon on 8/23/24.
 //
 
 import XCTest
 
-final class SwiftUI_PracticeUITestsLaunchTests: XCTestCase {
+final class CompositionalPracticeUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

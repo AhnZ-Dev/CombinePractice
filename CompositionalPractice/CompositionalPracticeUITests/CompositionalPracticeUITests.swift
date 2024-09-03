@@ -1,13 +1,13 @@
 //
-//  SwiftUI_PracticeUITests.swift
-//  SwiftUI_PracticeUITests
+//  CompositionalPracticeUITests.swift
+//  CompositionalPracticeUITests
 //
-//  Created by Jihoon on 9/2/24.
+//  Created by Jihoon on 8/23/24.
 //
 
 import XCTest
 
-final class SwiftUI_PracticeUITests: XCTestCase {
+final class CompositionalPracticeUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
